@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMark</title>
+    <!-- <link href="imgs/favicon.ico" type="image/x-icon" rel="icon"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+  </head>
+  <body>
+    <main class="container py-5">
+        <section>
+            <div class="home">
+                <div class="home-title text-center">
+                    <h1 class="mb-3">Bookmarker</h1>
+                    <div class="dotted-line"></div>
+            
+                    <p class="text-success fs-4">
+                      <i class="fa-solid fa-bookmark"></i> <span class="favsite">Bookmark your favorite sites</span>
+                      <i class="fa-solid fa-bookmark"></i>
+                    </p>
+                  </div>
+
+                  <div class="home-content py-4">
+                    <div class="first-input">
+                      <label for="siteName" class="pb-3 fw-bold">
+                        <span class="pe-1">
+                          <i class="fa-solid fa-book-bookmark"></i>
+                        </span>
+                        Site Name
+                      </label>
+                      <input
+                      oninput="allValidation(this , 'msgName')"
+                        class="form-control"
+                        type="text"
+                        id="siteName"
+                        placeholder="BookMark Name"
+                      />
+                      <p id="msgName" class="alert alert-danger p-2 d-none">Is not available</p>
+                    </div>
+          
+                    <div class="second-input">
+                      <label for="siteUrl" class="py-3 fw-bold">
+                        <span class="pe-1"><i class="fa-solid fa-link"></i></span>
+                        Site URL
+                      </label>
+                      <input
+                      oninput="allValidation(this , 'msgUrl')"
+                        class="form-control mb-4"
+                        type="text"
+                        id="siteUrl"
+                        placeholder="Website URL"
+                      />
+                      <p id="msgUrl" class="alert alert-danger p-2 d-none">Is not available</p>
+                    </div>
+                    <div class="my-button d-flex justify-content-center position-relative">
+                        <button onclick="addWebsite()" class="btn btn-outline-primary btn-sm mb-2">
+                            Submit
+                        </button>
+                    </div>
+                  </div>
+                  <div class="dotted-line1"></div>
+                  <table class="table text-center mt-3">
+                    <thead>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody id="tableData"></tbody>
+                  </table>
+                </div>
+            </sectio>
+        </main>
+      
+     
+        
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>

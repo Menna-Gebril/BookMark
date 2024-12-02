@@ -1,0 +1,41 @@
+body {
+  background-color: #f9ebdc;
+  color: #333;
+  font-family: "PT Sans Caption", sans-serif;
+}
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+}
+.favsite {
+  font-family: "Righteous", sans-serif;
+}
+.dotted-line {
+  border-top: 3px dotted;
+  margin: 3.125rem;
+}
+
+.dotted-line1{
+    border-top: 3px dotted;
+}
+.icon {
+  color: #ff9900;
+}
+.home-content label {
+  font-size: 1.2rem;
+}
+.form-control {
+  border-radius: 8px;
+}
+
+.btn {
+  background-color: #bb4120;
+  color: #fff;
+  padding: 10px 50px;
+  border-radius: 0.3125rem;
+  border: 0 #bb4120;
+}
+
+.btn:hover {
+  background-color: rgba(187,65,32,0.8);
+}
