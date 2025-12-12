@@ -17,6 +17,8 @@ function validationInputs(element) {
 
   if (regex[element.id].test(text)) {
     element.classList.add("is-valid");
+    document.getElementById("msg").classList.add("d-none");
+    document.getElementById("msgURL").classList.add("d-none");
     element.classList.remove("is-invalid");
 
     return true;
@@ -30,6 +32,21 @@ function validationInputs(element) {
 
 function addSite() {
   if (validationInputs(bookmarkName) && validationInputs(siteURL)) {
+    for (var i = 0; i < sites.length; i++) {
+      if (
+        sites[i].siteName.toLowerCase() === bookmarkName.value.toLowerCase()
+      ) {
+        document.getElementById("msg").classList.remove("d-none");
+
+        return;
+      }
+
+      if (sites[i].siteURL.toLowerCase() === siteURL.value.toLowerCase()) {
+        document.getElementById("msgURL").classList.remove("d-none");
+        return;
+      }
+    }
+
     var site = {
       siteName: bookmarkName.value,
       siteURL: siteURL.value,
