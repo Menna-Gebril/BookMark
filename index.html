@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+  </head>
+  <body>
+    <main class="home">
+      <div class="container">
+        <div class="title">
+          <h1 class="my-5 py-2">Bookmarker</h1>
+        </div>
+        <div class="data-inputs">
+          <h2 class="text-center my-4">
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+
+          <div class="inputs my-4">
+            <div class="mb-3">
+              <label for="bookmarkName" class="form-label fw-bolder">
+                <i class="fa-solid fa-book-bookmark pe-2"></i>
+                Site Name</label
+              >
+              <input
+                oninput="validationInputs(this)"
+                type="text"
+                class="form-control"
+                id="bookmarkName"
+                placeholder="Bookmark Name"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="siteURL" class="form-label fw-bolder">
+                <i class="fa-solid fa-link pe-2"></i>
+                Site URL</label
+              >
+              <input
+                oninput="validationInputs(this)"
+                type="text"
+                class="form-control"
+                id="siteURL"
+                placeholder="Website URL"
+              />
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button onclick="addSite()" class="my-3 btn py-2 px-5 text-white">
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <table class="table mt-5 text-center align-middle">
+            <thead>
+              <tr>
+                <th scope="col">index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal fade" id="myModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header pe-4 pt-4">
+            <div class="balls">
+              <div class="red-ball"></div>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>
+              Site Name or Url is not valid, Please follow the rules below :
+            </p>
+            <ul>
+              <li class="mb-3">
+                <i class="fa-regular fa-circle-right"></i>
+                Site name must contain at least 3 characters
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right"></i>
+                Site URL must be a valid one
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
